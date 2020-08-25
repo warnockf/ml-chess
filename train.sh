@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pipenv run python train.py
+python train.py

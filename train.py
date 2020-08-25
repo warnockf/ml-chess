@@ -18,38 +18,96 @@ def build_nn():
 
     nn.add(layers.Input(shape=(5, 8, 8)))
 
+    # 16
     nn.add(
         layers.Conv2D(
-            filters=3,
+            filters=16,
+            kernel_size=3,
+            padding='same',
+            activation='relu',
+        )
+    )
+    nn.add(
+        layers.Conv2D(
+            filters=16,
             kernel_size=3,
             padding='same',
             activation='relu',
         )
     )
 
+    # 32
     nn.add(
         layers.Conv2D(
-            filters=3,
+            filters=32,
+            kernel_size=3,
+            padding='same',
+            activation='relu',
+            stride=2,
+        )
+    )
+    nn.add(
+        layers.Conv2D(
+            filters=32,
             kernel_size=3,
             padding='same',
             activation='relu',
         )
     )
-
     nn.add(
         layers.Conv2D(
-            filters=3,
+            filters=32,
             kernel_size=3,
+            activation='relu',
+            stride=2,
+        )
+    )
+
+    # 64
+    nn.add(
+        layers.Conv2D(
+            filters=64,
+            kernel_size=2,
             padding='same',
             activation='relu',
         )
     )
-
     nn.add(
         layers.Conv2D(
-            filters=3,
-            kernel_size=3,
-            padding='valid',
+            filters=64,
+            kernel_size=2,
+            padding='same',
+            activation='relu',
+        )
+    )
+    nn.add(
+        layers.Conv2D(
+            filters=64,
+            kernel_size=2,
+            activation='relu',
+            stride=2,
+        )
+    )
+
+    # 128
+    nn.add(
+        layers.Conv2D(
+            filters=128,
+            kernel_size=1,
+            activation='relu',
+        )
+    )
+    nn.add(
+        layers.Conv2D(
+            filters=128,
+            kernel_size=1,
+            activation='relu',
+        )
+    )
+    nn.add(
+        layers.Conv2D(
+            filters=128,
+            kernel_size=1,
             activation='relu',
         )
     )
