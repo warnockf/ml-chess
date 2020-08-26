@@ -33,6 +33,7 @@ def build_nn():
             kernel_size=3,
             padding='same',
             activation='relu',
+            strides=(2,2),
         )
     )
 
@@ -58,10 +59,11 @@ def build_nn():
             filters=32,
             kernel_size=3,
             activation='relu',
+            strides=(2,2),
         )
     )
 
-    # 64
+    # # 64
     nn.add(
         layers.Conv2D(
             filters=64,
@@ -83,10 +85,12 @@ def build_nn():
             filters=64,
             kernel_size=2,
             activation='relu',
+            padding='same',
+            strides=(2,2),
         )
     )
 
-    # 128
+    # # 128
     nn.add(
         layers.Conv2D(
             filters=128,
@@ -133,5 +137,6 @@ if __name__ == "__main__":
         validation_data=(X_test, Y_test),
         epochs=100,
         batch_size=256,
-        shuffle=True
+        shuffle=True,
+        verbose=1,
     )
