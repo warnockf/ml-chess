@@ -43,7 +43,6 @@ def build_nn():
             kernel_size=3,
             padding='same',
             activation='relu',
-            stride=2,
         )
     )
     nn.add(
@@ -59,7 +58,6 @@ def build_nn():
             filters=32,
             kernel_size=3,
             activation='relu',
-            stride=2,
         )
     )
 
@@ -85,7 +83,6 @@ def build_nn():
             filters=64,
             kernel_size=2,
             activation='relu',
-            stride=2,
         )
     )
 
